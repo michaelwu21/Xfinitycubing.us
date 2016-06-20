@@ -1,1 +1,1 @@
-# Xfinitycubing.us
+# Program of xfinitycubing.us
