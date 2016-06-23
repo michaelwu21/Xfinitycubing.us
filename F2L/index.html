@@ -12,11 +12,16 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #D6EAF8;
+    background-color: #333;
 }
 
 li {
     float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
 }
 
 li a {
@@ -26,25 +31,19 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover {
-    background-color: #555;
+
+li a:hover:not(.active) {
+    background-color: #111;
 }
+
 .active {
-    background-color: #5DADE2;
-}
-li {
-    border-right: 1px solid #bbb;
-}
-ul {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    background-color: #4CAF50;
 }
 
 </style>
 <body>
 <ul>
-  <li><a href="Home"><p style="color:black;"><font size="5"><strong>Home</font></p></a></li>
+  <li><a href="Home"><font size="5"><strong>Home</font></p></a></li>
   <li><a class="active" href=""><font size="5"><strong>F2L</strong></font></a></li>
   <li><a href="Oll"><font size="5"><strong>Oll</strong></font></a></li>
   <li><a href="Pll"><font size="5"><strong>Pll</strong></font></a></li>
