@@ -1,0 +1,62 @@
+<html>
+<head>
+<script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script> 
+</head>
+<body onkeypress="control_timer (event);">
+	<center><a href="index.html"><img src="http://i.cubeupload.com/wNjl1j.png"></a></center>
+	<p>Press space to start the timer, and press space to stop the timer. This is a work in progress. </p>
+	<p id="elapsed_time" >0</p>
+	
+	<button onclick="$('#elapsed_time').text('0')">Clear Time</button>
+</body>
+
+<script>
+var t_started = false; 
+var stt_interval_id = 0; 
+//sleep function from StackOverflow https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
+
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+} 
+
+function increment_time(){
+	var current_time = parseFloat($("#elapsed_time").text())
+	var new_time = current_time + 0.01;
+	$("#elapsed_time").text(new_time);
+}
+
+function start_text(){
+	stt_interval_id = window.setInterval(increment_time, 1)
+}
+
+function stop_text(){
+	clearInterval(stt_interval_id);
+	stt_interval_id = 0; 
+}
+	
+function control_timer(keypress){
+	var keycode = keypress.charCode || keypress.keyCode;
+	if (keycode == 32){
+		t_started = !t_started; 
+		if (t_started){
+			start_text();
+		}
+		if (!t_started){
+			stop_text(); 
+		}
+	}
+	
+}	
+	
+
+	
+
+
+
+
+</script>
+
+</html>
+ 
